@@ -1,13 +1,13 @@
 export default function validateInfo(person) {
   let errors = {};
 
-  if (!person.firstName.trim()) {
-    errors.firstName = 'first name required';
+  if (!person.first_name) {
+    errors.first_name = 'first name required';
   }
 
   // lastName
-  if (!person.lastName) {
-    errors.lastName = 'last name required';
+  if (!person.last_name) {
+    errors.last_name = 'last name required';
   }
 
   // email
@@ -24,10 +24,10 @@ export default function validateInfo(person) {
     errors.password = 'Password needs to be 6 or more ';
   }
 
-  if (!person.password2) {
-    errors.password2 = 'password is required';
-  } else if (person.password2 !== person.password) {
-    errors.password2 = 'Passwords do not match';
+  if (!person.password_confirmation) {
+    errors.password_confirmation = 'password is required';
+  } else if (person.password_confirmation !== person.password) {
+    errors.password_confirmation = 'Passwords do not match';
   }
   return errors;
 }
